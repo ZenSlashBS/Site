@@ -12,15 +12,15 @@
         /* CSS Styles for Premium iPhone-like Feel */
         body {
             font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background: url('https://iili.io/FwOJIY7.jpg') no-repeat center center fixed;
+            background: url('https://iili.io/FwMrINR.jpg') no-repeat center center fixed;
             background-size: cover;
             display: flex;
             justify-content: center;
-            align-items: center;
-            height: 100vh;
+            align-items: flex-start; /* Changed to flex-start for better mobile scrolling */
+            min-height: 100vh; /* Allow body to grow beyond viewport */
             margin: 0;
             color: #fff; /* White text for contrast on image */
-            overflow: hidden; /* To handle particles */
+            overflow-y: auto; /* Enable vertical scrolling */
             position: relative;
         }
 
@@ -31,11 +31,12 @@
             width: 100%;
             height: 100%;
             z-index: -1; /* Behind content */
+            opacity: 0.8; /* Slightly reduced opacity to minimize flashing/interference */
         }
 
         .container {
             background: transparent; /* No background color or blur on container to keep full image clarity */
-            padding: 30px;
+            padding: 40px 30px; /* Increased top/bottom padding for more space */
             border-radius: 20px; /* Curved corners */
             box-shadow: none; /* Removed shadow to eliminate any box-like ending line */
             text-align: center;
@@ -43,6 +44,8 @@
             width: 90%;
             animation: fadeIn 1s ease-out; /* Fade-in animation */
             z-index: 1; /* Above canvas */
+            margin-top: 20px; /* Added top margin to ensure profile pic isn't cut off */
+            margin-bottom: 20px; /* Added bottom margin for spacing */
         }
 
         @keyframes fadeIn {
@@ -80,6 +83,8 @@
             font-size: 16px;
             color: #ddd;
             margin: 5px 0 25px;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Added subtle text shadow to improve readability against background */
+            line-height: 1.4; /* Better line spacing for bio text */
         }
 
         .links {
@@ -140,6 +145,32 @@
             color: #fff;
             text-decoration: underline;
         }
+
+        /* Media query for mobile optimization */
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px; /* Slightly reduce side padding for smaller screens */
+                margin-top: 40px; /* Increase top margin to fully show profile pic */
+            }
+
+            .profile-img {
+                width: 100px;
+                height: 100px; /* Slightly smaller for better fit */
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+
+            .links a {
+                font-size: 16px;
+                padding: 12px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -148,7 +179,7 @@
         <!-- Profile Section -->
         <img src="https://iili.io/FwVv0Fa.jpg" alt="Anya's Profile Picture" class="profile-img" id="profileImg">
         <h1>Anya</h1>
-        <p>Sensie @SikeNezReborn | ⚡MAGIC: <a href="https://t.me/HazeXPy/14" style="color: #fff; text-decoration: underline;">https://t.me/HazeXPy/14</a> If you have Telegram, you can contact Sensie right away.</p>
+        <p>Sensie @sikenezreborn | ⚡MAGIC: <a href="https://t.me/HazeXPy/14" style="color: #fff; text-decoration: underline;">https://t.me/HazeXPy/14</a> If you have Telegram, you can contact Sensie right away.</p>
 
         <!-- Links Section -->
         <ul class="links">
