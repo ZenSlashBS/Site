@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anya's Linktree</title>
+    <!-- Google Fonts for cooler typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* CSS Styles for Premium iPhone-like Feel */
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: url('https://iili.io/FwMrINR.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #fff; /* White text for contrast on image */
+            overflow: hidden; /* To handle particles */
+            position: relative;
+        }
+
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Behind content */
+        }
+
+        .container {
+            background: transparent; /* No background color or blur on container to keep full image clarity */
+            padding: 30px;
+            border-radius: 20px; /* Curved corners */
+            box-shadow: none; /* Removed shadow to eliminate any box-like ending line */
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            animation: fadeIn 1s ease-out; /* Fade-in animation */
+            z-index: 1; /* Above canvas */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            border: 2px solid rgba(255, 255, 255, 0.5); /* Subtle border for premium feel */
+            cursor: pointer; /* Make it clickable */
+        }
+
+        .profile-img.pop {
+            animation: popAnim 0.5s ease-in-out;
+        }
+
+        @keyframes popAnim {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); box-shadow: 0 0 10px rgba(255, 255, 255, 0.8); }
+            100% { transform: scale(1); }
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif; /* Elegant font for name */
+            font-size: 28px;
+            margin: 10px 0;
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 16px;
+            color: #ddd;
+            margin: 5px 0 25px;
+        }
+
+        .links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .links li {
+            margin: 15px 0;
+            opacity: 0; /* Start hidden for sequential animation */
+            animation: fadeInUp 0.5s forwards; /* Sequential fade-in */
+        }
+
+        .links li:nth-child(1) { animation-delay: 0.2s; }
+        .links li:nth-child(2) { animation-delay: 0.4s; }
+        .links li:nth-child(3) { animation-delay: 0.6s; }
+        .links li:nth-child(4) { animation-delay: 0.8s; }
+        .links li:nth-child(5) { animation-delay: 1s; }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1)); /* Gradient for cooler look */
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px); /* Reduced blur */
+            -webkit-backdrop-filter: blur(5px);
+            color: #fff;
+            text-decoration: none;
+            padding: 15px;
+            border-radius: 30px; /* More curved buttons for iPhone feel */
+            font-size: 18px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .links a:hover {
+            transform: scale(1.05); /* Scale animation on hover */
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* White glow */
+        }
+
+        .links i {
+            margin-right: 10px; /* Space between icon and text */
+            font-size: 20px;
+        }
+
+        .contact {
+            margin-top: 25px;
+            font-size: 14px;
+            color: #eee;
+        }
+
+        .contact a {
+            color: #fff;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <canvas></canvas>
+    <div class="container">
+        <!-- Profile Section -->
+        <img src="https://iili.io/FwVv0Fa.jpg" alt="Anya's Profile Picture" class="profile-img" id="profileImg">
+        <h1>Anya</h1>
+        <p>Sensie @sikenezreborn | ⚡MAGIC: <a href="https://t.me/HazeXPy/14" style="color: #fff; text-decoration: underline;">https://t.me/HazeXPy/14</a> If you have Telegram, you can contact Sensie right away.</p>
+
+        <!-- Links Section -->
+        <ul class="links">
+            <li><a href="https://Instagram.com/cyberpapdi" target="_blank"><i class="fab fa-instagram"></i>Cyber Papdi</a></li>
+            <li><a href="https://Instagram.com/ytgaming_on" target="_blank"><i class="fab fa-instagram"></i>YT Gaming On</a></li>
+            <li><a href="https://Instagram.com/bawalmeme69" target="_blank"><i class="fab fa-instagram"></i>Bawal Meme 69</a></li>
+            <li><a href="https://Instagram.com/Roblox_masivo" target="_blank"><i class="fab fa-instagram"></i>Roblox Masivo</a></li>
+            <li><a href="https://Instagram.com/vartoonfax" target="_blank"><i class="fab fa-instagram"></i>Vartoon Fax</a></li>
+        </ul>
+
+        <!-- Contact Details -->
+        <div class="contact">
+            <p><a href="https://telegram.me/sikenezreborn">Contact on Telegram</a></p>
+        </div>
+    </div>
+
+    <!-- JavaScript for burst petals on profile pic click -->
+    <script>
+        const canvas = document.querySelector('canvas');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        const ctx = canvas.getContext('2d');
+
+        const petalArray = [];
+        const GRAVITY = 0.05;
+        const BURST_AMOUNT = 50; // Limited amount per click
+
+        const petalImg = new Image();
+        petalImg.src = 'https://djjjk9bjm164h.cloudfront.net/petal.png';
+        petalImg.addEventListener('load', () => {
+            render();
+        });
+
+        function render() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            petalArray.forEach((petal, index) => {
+                petal.animate();
+                if (petal.y > canvas.height || petal.x < 0 || petal.x > canvas.width || petal.opacity <= 0) {
+                    petalArray.splice(index, 1); // Remove expired petals
+                }
+            });
+            window.requestAnimationFrame(render);
+        }
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        // Petal class with physics for burst
+        class Petal {
+            constructor(centerX, centerY) {
+                this.x = centerX;
+                this.y = centerY;
+                this.w = 25 + Math.random() * 15;
+                this.h = 20 + Math.random() * 10;
+                this.opacity = 1;
+                this.flip = Math.random();
+
+                const angle = Math.random() * Math.PI * 2; // 360 degrees random direction
+                const speed = 2 + Math.random() * 3; // Initial speed
+                this.vx = Math.cos(angle) * speed;
+                this.vy = Math.sin(angle) * speed; // Allows upward and all directions
+                this.flipSpeed = Math.random() * 0.03;
+            }
+
+            draw() {
+                ctx.globalAlpha = this.opacity;
+                ctx.drawImage(
+                    petalImg, 
+                    this.x, 
+                    this.y, 
+                    this.w * (0.6 + (Math.abs(Math.cos(this.flip)) / 3)), 
+                    this.h * (0.8 + (Math.abs(Math.sin(this.flip)) / 5))
+                );
+            }
+
+            animate() {
+                this.vy += GRAVITY; // Apply gravity (downward)
+                this.x += this.vx;
+                this.y += this.vy;
+                this.flip += this.flipSpeed;
+                this.opacity -= 0.005; // Fade out slowly
+                this.draw();
+            }
+        }
+
+        // Click event on profile pic
+        const profileImg = document.getElementById('profileImg');
+        profileImg.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent any default image behavior
+            profileImg.classList.add('pop');
+            setTimeout(() => {
+                profileImg.classList.remove('pop');
+            }, 500);
+
+            // Get center position of profile img
+            const rect = profileImg.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+
+            // Burst limited flowers
+            for (let i = 0; i < BURST_AMOUNT; i++) {
+                petalArray.push(new Petal(centerX, centerY));
+            }
+        });
+    </script>
+</body>
+</html>
